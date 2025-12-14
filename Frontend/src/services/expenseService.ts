@@ -12,7 +12,7 @@ export const getAllExpenses = async (category = '') => {
     }
 }
 
-export const getExpenseById = async (id) => {
+export const getExpenseById = async (id:any) => {
     try {
         const response = await axios.get(`${API_URL}/api/expenses/${id}`)
         return response.data
@@ -21,7 +21,7 @@ export const getExpenseById = async (id) => {
     }
 }
 
-export const createExpense = async (expenseData) => {
+export const createExpense = async (expenseData:any) => {
     try {
         const response = await axios.post(`${API_URL}/api/expenses`, expenseData)
         return response.data
@@ -30,7 +30,7 @@ export const createExpense = async (expenseData) => {
     }
 }
 
-export const updateExpense = async (id, expenseData) => {
+export const updateExpense = async (id:any, expenseData:any) => {
     try {
         const response = await axios.put(`${API_URL}/api/expenses/${id}`, expenseData)
         return response.data
@@ -39,7 +39,7 @@ export const updateExpense = async (id, expenseData) => {
     }
 }
 
-export const deleteExpense = async (id) => {
+export const deleteExpense = async (id:any) => {
     try {
         const response = await axios.delete(`${API_URL}/api/expenses/${id}`)
         return response.data

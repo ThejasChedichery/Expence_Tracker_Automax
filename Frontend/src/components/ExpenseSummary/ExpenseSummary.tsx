@@ -1,4 +1,4 @@
-function ExpenseSummary({ summary, totalAmount }) {
+function ExpenseSummary({ summary, totalAmount }:any) {
     return (
         <div className="row mb-4">
             <div className="col-md-4 mb-3">
@@ -27,7 +27,7 @@ function ExpenseSummary({ summary, totalAmount }) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {summary.map((item) => (
+                                    {summary.map((item:any) => (
                                         <tr key={item._id}>
                                             <td>
                                                 <span className="badge bg-info">

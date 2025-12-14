@@ -1,6 +1,6 @@
-function ExpenseList({ expenses, onDeleteExpense, loading }) {
+function ExpenseList({ expenses, onDeleteExpense, loading }:any) {
 
-    const formatDate = (dateString) => {
+    const formatDate = (dateString:any) => {
         const date = new Date(dateString)
         return date.toLocaleDateString()
     }
@@ -42,7 +42,7 @@ function ExpenseList({ expenses, onDeleteExpense, loading }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {expenses.map((expense) => (
+                            {expenses.map((expense:any) => (
                                 <tr key={expense._id}>
                                     <td>{expense.title}</td>
                                     <td>₹{expense.amount.toFixed(2)}</td>

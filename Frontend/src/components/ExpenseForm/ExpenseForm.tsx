@@ -1,9 +1,18 @@
+
 import { useState } from 'react'
 
-function ExpenseForm({ onExpenseAdded }) {
-    const [formData, setFormData] = useState({
+type ExpenseFormData = {
+    title: string
+    amount: number
+    category: string
+    date: string
+    notes: string
+  }
+
+function ExpenseForm({ onExpenseAdded }:any) {
+    const [formData, setFormData] = useState<ExpenseFormData>({
         title: '',
-        amount: '',
+        amount: 0,
         category: 'food',
         date: '',
         notes: ''
@@ -11,14 +20,14 @@ function ExpenseForm({ onExpenseAdded }) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e:any) => {
         e.preventDefault()
         setError('')
 
@@ -37,7 +46,7 @@ function ExpenseForm({ onExpenseAdded }) {
             await onExpenseAdded(formData)
             setFormData({
                 title: '',
-                amount: '',
+                amount: 0,
                 category: 'food',
                 date: '',
                 notes: ''
@@ -114,7 +123,7 @@ function ExpenseForm({ onExpenseAdded }) {
                             name="notes"
                             value={formData.notes}
                             onChange={handleChange}
-                            rows="2"
+                            rows={2}
                         ></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary" disabled={loading}>

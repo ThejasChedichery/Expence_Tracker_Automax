@@ -1,4 +1,4 @@
-function FilterBar({ selectedCategory, onCategoryChange }) {
+function FilterBar({ selectedCategory, onCategoryChange }:any) {
     return (
         <div className="card mb-4">
             <div className="card-body">
