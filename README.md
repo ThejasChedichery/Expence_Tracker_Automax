@@ -89,20 +89,9 @@ cd Backend
 npm install
 ```
 
-3. Create `.env` file with the required environment variables (see above)
-
-4. Start MongoDB service:
+3. Start the backend server:
 ```bash
-# For Windows
-net start MongoDB
-
-# For Mac/Linux
-sudo systemctl start mongod
-```
-
-5. Start the backend server:
-```bash
-npm start
+npm run dev
 ```
 
 The backend will run on `http://localhost:3001`
